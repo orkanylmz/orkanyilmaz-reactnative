@@ -5,6 +5,7 @@
 ![home](demo/home.png 'Home')
 ![details](demo/details.png 'Product Details')
 ![create](demo/create.png 'Create Product')
+![error](demo/error.png 'Create Product Error')
 
 ## Philosophy
 
