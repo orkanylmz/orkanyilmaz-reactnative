@@ -133,7 +133,7 @@ It suggest to combine things that belongs to same feature. So anybody can take a
 
 ### File Namings
 
-It uses kabab-case for naming files and folders as we think it's the most readable and consistent way to name files and folders in large projects and it's the most common way to name files and folders in the react native community.
+It uses kabab-case for naming files and folders as it's the most readable and consistent way to name files and folders in large projects and it's the most common way to name files and folders in the react native community.
 
 ```bash title="Project Structure"
 src
