@@ -1,13 +1,13 @@
-import { CreateProductButton } from "@/components";
-import { CategoriesList, useCategoryStore } from "@/features/categories";
-import { RootStackScreenProps } from "@/features/navigation/types";
-import { ProductList } from "@/features/product";
+import { useLayoutEffect } from 'react';
+import { SafeAreaView } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
 
-import { useLayoutEffect } from "react";
-import { SafeAreaView } from "react-native";
-import tw from "tailwind-react-native-classnames";
+import { CreateProductButton } from '@/components';
+import { CategoriesList, useCategoryStore } from '@/features/categories';
+import type { RootStackScreenProps } from '@/features/navigation/types';
+import { ProductList } from '@/features/product';
 
-export const HomeScreen = ({ navigation }: RootStackScreenProps<"Home">) => {
+export const HomeScreen = ({ navigation }: RootStackScreenProps<'Home'>) => {
   const setActiveCategory = useCategoryStore(
     (state) => state.setActiveCategory
   );
@@ -16,12 +16,12 @@ export const HomeScreen = ({ navigation }: RootStackScreenProps<"Home">) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "Upayments Store",
+      headerTitle: 'Upayments Store',
     });
   }, [navigation]);
 
   const onPressCreateProduct = () => {
-    navigation.navigate("CreateProduct");
+    navigation.navigate('CreateProduct');
   };
 
   const onPressCategory = (name: string) => {

@@ -1,4 +1,4 @@
-import create from "zustand";
+import create from 'zustand';
 
 interface CategoryState {
   activeCategory: string;
@@ -6,7 +6,7 @@ interface CategoryState {
 }
 
 export const useCategoryStore = create<CategoryState>((set) => ({
-  activeCategory: "All",
+  activeCategory: 'All',
   setActiveCategory: (category: string) => {
     set({ activeCategory: category });
   },

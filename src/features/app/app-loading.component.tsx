@@ -1,7 +1,8 @@
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { ReactNode, useCallback, useEffect } from "react";
-import { View } from "react-native";
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import type { ReactNode } from 'react';
+import { useCallback, useEffect } from 'react';
+import { View } from 'react-native';
 
 export type TaskResult<T = unknown> = [string, T];
 export type Task = () => Promise<TaskResult | null>;

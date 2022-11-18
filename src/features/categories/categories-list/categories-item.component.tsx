@@ -1,7 +1,8 @@
-import type { Category } from "@/api";
-import { Text, View } from "react-native";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-import tw from "tailwind-react-native-classnames";
+import { Text, View } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import tw from 'tailwind-react-native-classnames';
+
+import type { Category } from '@/api';
 
 interface Props {
   category: Category;
@@ -22,7 +23,7 @@ const CategoriesItem = ({ category, isActive, onPress }: Props) => {
       >
         <View
           style={tw`${
-            isActive ? "bg-black" : "bg-gray-300"
+            isActive ? 'bg-black' : 'bg-gray-300'
           } mr-4 items-center justify-center rounded-lg py-2 px-3`}
         >
           <Text style={tw`${isActive ? `text-white` : `text-black`} text-sm`}>

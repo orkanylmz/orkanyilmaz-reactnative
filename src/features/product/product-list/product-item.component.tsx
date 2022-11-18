@@ -1,9 +1,9 @@
-import type { Product } from "@/api";
-import { ProductScreenNavigationProp } from "@/features/navigation/types";
+import { useNavigation } from '@react-navigation/native';
+import { Image, Text, TouchableWithoutFeedback, View } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
 
-import { useNavigation } from "@react-navigation/native";
-import { Image, Text, TouchableWithoutFeedback, View } from "react-native";
-import tw from "tailwind-react-native-classnames";
+import type { Product } from '@/api';
+import type { ProductScreenNavigationProp } from '@/features/navigation/types';
 
 interface Props {
   item: Product;
@@ -13,7 +13,7 @@ const ProductItem = ({ item }: Props) => {
   const navigation = useNavigation<ProductScreenNavigationProp>();
 
   const onPress = () => {
-    navigation.navigate("ProductDetails", { productId: item._id });
+    navigation.navigate('ProductDetails', { productId: item._id });
   };
 
   return (

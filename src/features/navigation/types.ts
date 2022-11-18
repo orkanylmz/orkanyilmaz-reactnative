@@ -1,7 +1,8 @@
+/* eslint-disable unused-imports/no-unused-vars */
 import type {
   NativeStackNavigationProp,
   NativeStackScreenProps,
-} from "@react-navigation/native-stack";
+} from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
   Home: undefined;

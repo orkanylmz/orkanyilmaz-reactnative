@@ -1,10 +1,10 @@
-import NetInfo from "@react-native-community/netinfo";
+import NetInfo from '@react-native-community/netinfo';
 import {
   onlineManager,
   QueryClient,
   QueryClientProvider,
-} from "@tanstack/react-query";
-import { ReactNode } from "react";
+} from '@tanstack/react-query';
+import type { ReactNode } from 'react';
 
 export const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 3 } },

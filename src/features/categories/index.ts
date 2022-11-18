@@ -1,2 +1,2 @@
-export * from "./categories-list";
-export * from "./categories.context";
+export * from './categories.context';
+export * from './categories-list';

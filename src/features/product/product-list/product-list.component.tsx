@@ -1,12 +1,14 @@
-import type { Product } from "@/api";
-import { useProducts } from "@/api";
-import { useCategoryStore } from "@/features/categories";
-import ProductListSkeleton from "@/features/product/product-list/product-list-skeleton.component";
-import { FlashList } from "@shopify/flash-list";
-import { useMemo } from "react";
-import { RefreshControl, View } from "react-native";
-import tw from "tailwind-react-native-classnames";
-import ProductItem from "./product-item.component";
+import { FlashList } from '@shopify/flash-list';
+import { useMemo } from 'react';
+import { RefreshControl, View } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
+
+import type { Product } from '@/api';
+import { useProducts } from '@/api';
+import { useCategoryStore } from '@/features/categories';
+import ProductListSkeleton from '@/features/product/product-list/product-list-skeleton.component';
+
+import ProductItem from './product-item.component';
 
 const ProductList = () => {
   const activeCategory = useCategoryStore((state) => state.activeCategory);
@@ -25,7 +27,7 @@ const ProductList = () => {
     () =>
       !data
         ? []
-        : activeCategory !== "All"
+        : activeCategory !== 'All'
         ? data?.filter((c) => c.category === activeCategory)
         : data,
     [data, activeCategory]

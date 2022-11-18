@@ -1,12 +1,13 @@
-import { useProduct } from "@/api";
-import type { RootStackScreenProps } from "@/features/navigation";
-import { ProductDetails, ProductDetailsImage } from "@/features/product";
-import { View } from "react-native";
-import tw from "tailwind-react-native-classnames";
+import { View } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
+
+import { useProduct } from '@/api';
+import type { RootStackScreenProps } from '@/features/navigation';
+import { ProductDetails, ProductDetailsImage } from '@/features/product';
 
 export const ProductDetailsScreen = ({
   route,
-}: RootStackScreenProps<"ProductDetails">) => {
+}: RootStackScreenProps<'ProductDetails'>) => {
   const { data, isLoading } = useProduct({ id: route.params.productId });
 
   return (

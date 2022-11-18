@@ -1,5 +1,6 @@
-import Config from "@config";
-import axios, { AxiosRequestConfig } from "axios";
+import Config from '@config';
+import type { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 const httpClient = axios.create({
   baseURL: Config.API_BASE_URL,

@@ -1,36 +1,41 @@
-import { CategoriesList } from "@/features/categories";
-import { FormInput } from "@/features/ui";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { Text, View } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
-import tw from "tailwind-react-native-classnames";
-import * as z from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Controller, useForm } from 'react-hook-form';
+import { ActivityIndicator, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import tw from 'tailwind-react-native-classnames';
+import * as z from 'zod';
+
+import { CategoriesList } from '@/features/categories';
+import { FormInput } from '@/features/ui';
 
 const schema = z.object({
-  title: z.string({ required_error: "Product title is required." }).trim(),
+  title: z.string({ required_error: 'Product title is required.' }).trim(),
   price: z
-    .string({ required_error: "Product price is required." })
+    .string({ required_error: 'Product price is required.' })
     .trim()
     .refine((val) => !Number.isNaN(parseInt(val, 10)), {
-      message: "Expected number, received a string",
+      message: 'Expected number, received a string',
     }),
   description: z
-    .string({ required_error: "Product description is required." })
+    .string({ required_error: 'Product description is required.' })
     .trim(),
   imageLink: z
-    .string({ required_error: "Product image link is required" })
+    .string({ required_error: 'Product image link is required' })
     .trim(),
-  category: z.string({ required_error: "You must choose a category" }).trim(),
+  category: z.string({ required_error: 'You must choose a category' }).trim(),
 });
 
 export type CreateProductFormType = z.infer<typeof schema>;
 
 interface Props {
   onSubmit?: (data: CreateProductFormType) => void;
+  isLoading: boolean;
 }
 
-export const CreateProductForm = ({ onSubmit = () => {} }: Props) => {
+export const CreateProductForm = ({
+  onSubmit = () => {},
+  isLoading,
+}: Props) => {
   const {
     handleSubmit,
     control,
@@ -74,9 +79,9 @@ export const CreateProductForm = ({ onSubmit = () => {} }: Props) => {
 
       <Text
         style={tw`${
-          errors.category ? "text-red-600" : "text-black"
+          errors.category ? 'text-red-600' : 'text-black'
         } mb-1 font-medium`}
-      >{`Selected Category: ${watch("category") || ""}`}</Text>
+      >{`Selected Category: ${watch('category') || ''}`}</Text>
       <Controller
         name="category"
         control={control}
@@ -90,13 +95,13 @@ export const CreateProductForm = ({ onSubmit = () => {} }: Props) => {
       />
       {errors.category && (
         <Text
-          style={tw`${errors.category ? "text-red-600" : "text-black"} mb-4`}
+          style={tw`${errors.category ? 'text-red-600' : 'text-black'} mb-4`}
         >
           {errors.category?.message}
         </Text>
       )}
 
-      <RectButton
+      <TouchableOpacity
         testID="create-product-button"
         onPress={handleSubmit(onSubmit)}
         style={[
@@ -104,8 +109,12 @@ export const CreateProductForm = ({ onSubmit = () => {} }: Props) => {
           { borderRadius: 10 },
         ]}
       >
-        <Text style={tw`text-white font-semibold`}>Add Product</Text>
-      </RectButton>
+        {isLoading ? (
+          <ActivityIndicator animating color={'white'} />
+        ) : (
+          <Text style={tw`text-white font-semibold`}>Add Product</Text>
+        )}
+      </TouchableOpacity>
     </View>
   );
 };

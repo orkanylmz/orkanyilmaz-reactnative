@@ -1,6 +1,6 @@
-import { FontAwesome } from "@expo/vector-icons";
-import { RectButton } from "react-native-gesture-handler";
-import tw from "tailwind-react-native-classnames";
+import { FontAwesome } from '@expo/vector-icons';
+import { RectButton } from 'react-native-gesture-handler';
+import tw from 'tailwind-react-native-classnames';
 
 interface Props {
   onPress?: () => void;
@@ -16,7 +16,7 @@ export const CreateProductButton = ({ onPress }: Props) => {
           width: 50,
           height: 50,
           borderRadius: 25,
-          shadowColor: "#000",
+          shadowColor: '#000',
           shadowOffset: {
             width: 0,
             height: 4,

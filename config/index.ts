@@ -1,6 +1,6 @@
-import { Config as NConfig } from "./config.js";
+import { Config as NConfig } from './config.js';
 
-type APP_ENV_Type = "development" | "staging" | "production";
+type APP_ENV_Type = 'development' | 'staging' | 'production';
 
 type ConfigType = {
   scheme: string;

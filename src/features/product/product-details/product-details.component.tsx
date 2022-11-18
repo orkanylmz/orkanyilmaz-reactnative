@@ -1,8 +1,9 @@
-import { BottomSheetHandle } from "@/components";
-import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
-import { useMemo, useRef } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
-import tw from "tailwind-react-native-classnames";
+import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
+import { useMemo, useRef } from 'react';
+import { ActivityIndicator, Text, View } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
+
+import { BottomSheetHandle } from '@/components';
 
 interface ProductDetailsProps {
   name?: string;
@@ -21,7 +22,7 @@ export const ProductDetails = ({
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ["25%", "75%"], []);
+  const snapPoints = useMemo(() => ['25%', '75%'], []);
 
   return (
     <BottomSheet
@@ -30,7 +31,7 @@ export const ProductDetails = ({
       snapPoints={snapPoints}
       handleComponent={BottomSheetHandle}
       style={{
-        shadowColor: "#000",
+        shadowColor: '#000',
         shadowOffset: {
           width: 0,
           height: -4,
@@ -46,7 +47,7 @@ export const ProductDetails = ({
           <ActivityIndicator
             style={{ marginTop: 15 }}
             animating
-            color={"white"}
+            color={'white'}
           />
         ) : (
           <>

@@ -1,10 +1,12 @@
-import { Category, useCategories } from "@/api";
+import { useMemo } from 'react';
+import { FlatList, View } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
 
-import { useMemo } from "react";
-import { FlatList, View } from "react-native";
-import tw from "tailwind-react-native-classnames";
-import CategoriesItem from "./categories-item.component";
-import CategoriesSkeleton from "./categories-skeleton.component";
+import type { Category } from '@/api';
+import { useCategories } from '@/api';
+
+import CategoriesItem from './categories-item.component';
+import CategoriesSkeleton from './categories-skeleton.component';
 
 interface Props {
   activeCategory: string;
@@ -31,8 +33,8 @@ const CategoriesList = ({
 
   const categories = useMemo(
     () =>
-      data ? (includeAll ? [{ name: "All", _id: "all" }, ...data] : data) : [],
-    [data]
+      data ? (includeAll ? [{ name: 'All', _id: 'all' }, ...data] : data) : [],
+    [data, includeAll]
   );
 
   return (

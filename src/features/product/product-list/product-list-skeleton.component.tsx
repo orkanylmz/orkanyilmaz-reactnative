@@ -1,13 +1,13 @@
-import { FlashList } from "@shopify/flash-list";
-import { Skeleton } from "moti/skeleton";
-import { View } from "react-native";
-import tw from "tailwind-react-native-classnames";
+import { FlashList } from '@shopify/flash-list';
+import { Skeleton } from 'moti/skeleton';
+import { View } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
 
 const ProductListSkeleton = () => {
   const renderItem = () => {
     return (
       <View style={tw`items-center mb-4 w-full p-2`}>
-        <Skeleton colorMode="light" height={240} width={"100%"} radius={8} />
+        <Skeleton colorMode="light" height={240} width={'100%'} radius={8} />
       </View>
     );
   };

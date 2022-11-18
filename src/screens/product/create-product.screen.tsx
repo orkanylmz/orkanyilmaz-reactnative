@@ -1,14 +1,17 @@
-import { Product, useCreateProduct } from "@/api/products";
-import { RootStackScreenProps } from "@/features/navigation";
-import { CreateProductForm, CreateProductFormType } from "@/features/product";
-import { useQueryClient } from "@tanstack/react-query";
-import { View } from "react-native";
-import { showMessage } from "react-native-flash-message";
-import tw from "tailwind-react-native-classnames";
+import { useQueryClient } from '@tanstack/react-query';
+import { View } from 'react-native';
+import { showMessage } from 'react-native-flash-message';
+import tw from 'tailwind-react-native-classnames';
+
+import type { Product } from '@/api/products';
+import { useCreateProduct } from '@/api/products';
+import type { RootStackScreenProps } from '@/features/navigation';
+import type { CreateProductFormType } from '@/features/product';
+import { CreateProductForm } from '@/features/product';
 
 export const CreateProductScreen = ({
   navigation,
-}: RootStackScreenProps<"CreateProduct">) => {
+}: RootStackScreenProps<'CreateProduct'>) => {
   const { mutate: createProduct, isLoading } = useCreateProduct();
   const queryClient = useQueryClient();
 
@@ -25,24 +28,28 @@ export const CreateProductScreen = ({
         onSuccess: (newProduct: Product) => {
           // Updating the cache
           queryClient.setQueryData<Array<Product>>(
-            ["products"],
+            ['products'],
             (oldProducts) => oldProducts && [...oldProducts, newProduct]
           );
           showMessage({
-            message: "Product created successfully",
-            type: "success",
+            message: 'Product created successfully',
+            type: 'success',
           });
           navigation.goBack();
         },
         onError: (err) => {
-          console.log("error: ", err.response);
+          console.log('error: ', err.response);
+          showMessage({
+            message: 'Error occured creating product',
+            type: 'danger',
+          });
         },
       }
     );
   };
   return (
     <View style={tw`flex-1 bg-white`}>
-      <CreateProductForm onSubmit={onSubmit} />
+      <CreateProductForm onSubmit={onSubmit} isLoading={isLoading} />
     </View>
   );
 };

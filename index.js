@@ -1,4 +1,5 @@
-import { App } from "@/features/app";
-import { registerRootComponent } from "expo";
+import { registerRootComponent } from 'expo';
+
+import { App } from '@/features/app';
 
 registerRootComponent(App);

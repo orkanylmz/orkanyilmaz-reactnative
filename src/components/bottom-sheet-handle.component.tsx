@@ -1,17 +1,19 @@
-import { BottomSheetHandleProps } from "@gorhom/bottom-sheet";
-import React, { useMemo } from "react";
-import { StyleProp, StyleSheet, ViewStyle } from "react-native";
+import type { BottomSheetHandleProps } from '@gorhom/bottom-sheet';
+import type React from 'react';
+import { useMemo } from 'react';
+import type { StyleProp, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Animated, {
   Extrapolate,
   interpolate,
   useAnimatedStyle,
   useDerivedValue,
-} from "react-native-reanimated";
-import { toRad } from "react-native-redash";
+} from 'react-native-reanimated';
+import { toRad } from 'react-native-redash';
 
 // @ts-ignore
 export const transformOrigin = ({ x, y }, ...transformations) => {
-  "worklet";
+  'worklet';
   return [
     { translateX: x },
     { translateY: y },
@@ -119,17 +121,17 @@ export const BottomSheetHandle: React.FC<HandleProps> = ({
 
 const styles = StyleSheet.create({
   header: {
-    alignContent: "center",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "black",
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'black',
     paddingVertical: 14,
   },
   indicator: {
-    position: "absolute",
+    position: 'absolute',
     width: 10,
     height: 4,
-    backgroundColor: "#999",
+    backgroundColor: '#999',
   },
   leftIndicator: {
     borderTopStartRadius: 2,

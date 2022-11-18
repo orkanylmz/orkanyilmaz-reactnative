@@ -1,11 +1,12 @@
-import type { RootStackParamList } from "@/features/navigation/types";
 import {
   createNavigationContainerRef,
   DefaultTheme,
   NavigationContainer as RNNavigationContainer,
-} from "@react-navigation/native";
-import type { ReactNode } from "react";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+} from '@react-navigation/native';
+import type { ReactNode } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import type { RootStackParamList } from '@/features/navigation/types';
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
 

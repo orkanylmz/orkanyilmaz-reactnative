@@ -1,10 +1,10 @@
 # Overview
 
-![splash](demo/splash.png "Splash")
-![skeleton](demo/skeleton.png "Skeleton")
-![home](demo/home.png "Home")
-![details](demo/details.png "Product Details")
-![create](demo/create.png "Create Product")
+![splash](demo/splash.png 'Splash')
+![skeleton](demo/skeleton.png 'Skeleton')
+![home](demo/home.png 'Home')
+![details](demo/details.png 'Product Details')
+![create](demo/create.png 'Create Product')
 
 ## Philosophy
 
@@ -25,6 +25,9 @@
 - Data fetching & caching layer with [React Query](https://react-query.tanstack.com) & [Axios](https://github.com/axios/axios)
 - Excellent form handling with minimum re-renders using [react-hook-form](https://react-hook-form.com) and validation with [zod](https://github.com/colinhacks/zod)
 - Fast & Performant Lists with [Flash List](https://shopify.github.io/flash-list/)
+- 60 FPS performant [Bottom Sheet](https://github.com/gorhom/react-native-bottom-sheet) for better UX
+- [react-native-flash-message](https://github.com/lucasferreira/react-native-flash-message) for toast messages
+- [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/) for consistent coding style
 - Skeleton loading for better UX
 - Easy state management with [zustand](https://github.com/pmndrs/zustand)
 - Tests with [Jest](https://jestjs.io/)<br/><br/>
@@ -45,6 +48,12 @@ npx expo start
 
 ```console
 yarn test
+```
+
+## Linting
+
+```console
+yarn lint
 ```
 
 ## Building with env
