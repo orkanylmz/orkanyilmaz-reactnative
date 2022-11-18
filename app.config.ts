@@ -5,7 +5,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: Config.name,
   description: `${Config.name} Mobile App`,
-  slug: 'obytesapp',
+  slug: 'upayments',
   version: Config.version.toString(),
   orientation: 'portrait',
   icon: Config.icon,
