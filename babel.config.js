@@ -6,14 +6,26 @@ module.exports = function (api) {
       [
         "module-resolver",
         {
+          root: ["./"],
           alias: {
-            "@components": "./src/components",
-            "@features": "./src/features",
-            "@api": "./src/api",
-            "@screens": "./src/screens",
+            "@": "./src",
+            "@assets": "./assets",
+            "@config": "./config",
           },
+          extensions: [
+            ".ios.ts",
+            ".android.ts",
+            ".ts",
+            ".ios.tsx",
+            ".android.tsx",
+            ".tsx",
+            ".jsx",
+            ".js",
+            ".json",
+          ],
         },
       ],
+      "react-native-reanimated/plugin",
     ],
     env: {
       production: {

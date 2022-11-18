@@ -1,1 +1,1 @@
-export { default } from "./create-product-form.component";
+export * from "./create-product-form.component";

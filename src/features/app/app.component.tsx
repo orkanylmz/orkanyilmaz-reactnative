@@ -1,28 +1,27 @@
-import { RootNavigator } from "@features/navigation";
-import NetInfo from "@react-native-community/netinfo";
-import {
-  onlineManager,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { APIProvider } from "@/api";
+import AppLoading from "@/features/app/app-loading.component";
+import { RootNavigator } from "@/features/navigation";
+import FlashMessage from "react-native-flash-message";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-onlineManager.setEventListener((setOnline) => {
-  return NetInfo.addEventListener((state) => {
-    setOnline(Boolean(state.isConnected));
-  });
-});
-
-const queryClient = new QueryClient({
-  defaultOptions: { queries: { retry: 3 } },
-});
+const fonts = {
+  "Poppins-Bold": require("@assets/fonts/Poppins-Bold.ttf"),
+  "Poppins-Light": require("@assets/fonts/Poppins-Light.ttf"),
+  "Poppins-Medium": require("@assets/fonts/Poppins-Medium.ttf"),
+  "Poppins-Regular": require("@assets/fonts/Poppins-Regular.ttf"),
+  "Poppins-Semibold": require("@assets/fonts/Poppins-SemiBold.ttf"),
+  "Poppins-Thin": require("@assets/fonts/Poppins-Thin.ttf"),
+};
 
 const App = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <QueryClientProvider client={queryClient}>
-        <RootNavigator />
-      </QueryClientProvider>
+      <APIProvider>
+        <AppLoading fonts={fonts}>
+          <RootNavigator />
+          <FlashMessage position="top" />
+        </AppLoading>
+      </APIProvider>
     </GestureHandlerRootView>
   );
 };

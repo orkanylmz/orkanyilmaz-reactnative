@@ -5,7 +5,7 @@ import type {
 
 export type RootStackParamList = {
   Home: undefined;
-  ProductDetail: {
+  ProductDetails: {
     productId: string;
   };
   CreateProduct: undefined;
@@ -14,4 +14,12 @@ export type RootStackParamList = {
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
 
+declare namespace global {
+  namespace ReactNavigation {
+    type RootParamList = RootStackParamList;
+  }
+}
 export type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
+
+export type ProductScreenNavigationProp =
+  NativeStackNavigationProp<RootStackParamList>;

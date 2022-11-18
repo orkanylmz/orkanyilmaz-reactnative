@@ -1,14 +1,25 @@
+import { RootStackParamList } from "@/features/navigation/types";
+import {
+  CreateProductScreen,
+  HomeScreen,
+  ProductDetailsScreen,
+} from "@/screens";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import CreateProductScreen from "@screens/create-product.screen";
-import HomeScreen from "@screens/home.screen";
-import ProductDetailsScreen from "@screens/product-details.screen";
 import { NavigationContainer } from "./navigation-container.component";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShadowVisible: false,
+        headerBackTitle: "",
+        headerTitle: "",
+        headerTintColor: "black",
+      }}
+    >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
       <Stack.Screen name="CreateProduct" component={CreateProductScreen} />

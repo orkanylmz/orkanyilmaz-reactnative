@@ -1,4 +1,4 @@
-import type { RootStackParamList } from "@features/navigation/types";
+import type { RootStackParamList } from "@/features/navigation/types";
 import {
   createNavigationContainerRef,
   DefaultTheme,
@@ -8,16 +8,6 @@ import type { ReactNode } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
-
-export function navigate<RouteName extends keyof RootStackParamList>(
-  name: RouteName,
-  params?: RootStackParamList[RouteName]
-): void {
-  if (navigationRef.isReady()) {
-    // Perform navigation if the react navigation is ready to handle actions
-    navigationRef.navigate(name, params);
-  }
-}
 
 const navigatorTheme = {
   ...DefaultTheme,
