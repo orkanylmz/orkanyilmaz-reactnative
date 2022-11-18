@@ -17,6 +17,7 @@
 - Latest Expo SDK
 - [EAS Build](https://docs.expo.dev/build/introduction/) for easy distribution & deployment
 - All Typescript and functional components.
+- [Screaming Architecture](http://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) by Uncle bob for the best project structure
 - Tailwind UI
 - Multiple environment builds [Production, Staging, Development] using Expo configuration
 - Clean project structure with Absolute imports
