@@ -20,6 +20,7 @@
 - Tailwind UI
 - Multiple environment builds [Production, Staging, Development] using Expo configuration
 - Clean project structure with Absolute imports
+- [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/) for native gesture handling.
 - [React Navigation](https://reactnavigation.org/) with Native stack instead of JS one
 - Data fetching & caching layer with [React Query](https://react-query.tanstack.com) & [Axios](https://github.com/axios/axios)
 - Excellent form handling with minimum re-renders using [react-hook-form](https://react-hook-form.com) and validation with [zod](https://github.com/colinhacks/zod)
