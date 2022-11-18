@@ -1,5 +1,11 @@
 # Overview
 
+![splash](demo/splash.png "Splash")
+![skeleton](demo/skeleton.png "Skeleton")
+![home](demo/home.png "Home")
+![details](demo/details.png "Product Details")
+![create](demo/create.png "Create Product")
+
 ## Philosophy
 
 - Production-ready
@@ -18,6 +24,7 @@
 - Data fetching & caching layer with [React Query](https://react-query.tanstack.com) & [Axios](https://github.com/axios/axios)
 - Excellent form handling with minimum re-renders using [react-hook-form](https://react-hook-form.com) and validation with [zod](https://github.com/colinhacks/zod)
 - Fast & Performant Lists with [Flash List](https://shopify.github.io/flash-list/)
+- Skeleton loading for better UX
 - Easy state management with [zustand](https://github.com/pmndrs/zustand)
 - Tests with [Jest](https://jestjs.io/)<br/><br/>
 
